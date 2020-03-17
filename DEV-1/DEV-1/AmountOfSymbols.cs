@@ -2,8 +2,16 @@
 
 namespace DEV_1
 {
+    /// <summary>
+    /// Class that contain method for calculating amount of different symbols in a row
+    /// </summary>
     public class AmountOfSymbols
     {
+        /// <summary>
+        /// Method for calculating amount of different symbols in a row
+        /// </summary>
+        /// <param name="line"> testing string </param>
+        /// <returns> Maximum amount of different symbols in a row </returns>
         public int AmountOfNonRepeatingSymbolsInARow(string line)
         {
             if (line == null)
