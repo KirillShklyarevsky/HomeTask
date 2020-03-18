@@ -6,8 +6,6 @@ namespace DEV_2
     {
         static void Main(string[] args)
         {
-            NumeralSystem a = new NumeralSystem(263, 20);
-            Console.WriteLine(a.ConvertToNumeralSystem());
         }
     }
 }

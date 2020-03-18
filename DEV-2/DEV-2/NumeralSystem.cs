@@ -7,7 +7,7 @@ namespace DEV_2
         private int _number;
         private int _systemBase;
 
-        public NumeralSystem(int number, int systemBase) // мб заменить на стринг 
+        public NumeralSystem(int number, int systemBase)
         {
             Number = number;
             SystemBase = systemBase;
@@ -41,12 +41,12 @@ namespace DEV_2
             }
         }
 
-        public void CheckNumber(int value) // подумать над надобностью?
+        public void CheckNumber(int value)
         {
             if (value < 0)
             {
                 throw new ArgumentOutOfRangeException();
-            }            
+            }
         }
 
         public void CheckSystemBase(int value)
@@ -59,6 +59,10 @@ namespace DEV_2
 
         public string ConvertToNumeralSystem()
         {
+            if (Number == 0)
+            {
+                return Number.ToString();
+            }
             if (SystemBase == 10)
             {
                 return Number.ToString();
