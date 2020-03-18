@@ -39,6 +39,25 @@ namespace DEV_2.Tests
 
             Assert.AreEqual(actual, expected);
         }
+        
+        [TestMethod()]
+        public void ReverseStringTest()
+        {
+            NumeralSystem system = new NumeralSystem(10, 10);
+            string expected = "abcdef";
+
+            string actual = system.ReverseString("fedcba");
+
+            Assert.AreEqual(actual, expected);
+        }
+
+        public string ReverseString(string ReversedNumberInBaseSystem)
+        {
+            char[] arr = ReversedNumberInBaseSystem.ToCharArray();
+            Array.Reverse(arr);
+
+            return new String(arr);
+        }
 
         [TestMethod()]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]

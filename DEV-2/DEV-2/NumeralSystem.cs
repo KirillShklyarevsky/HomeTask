@@ -2,17 +2,28 @@
 
 namespace DEV_2
 {
+    /// <summary>
+    /// Class that contain method for conveting numbers for from decimal system to other (2-20)
+    /// </summary>
     public class NumeralSystem
     {
         private int _number;
         private int _systemBase;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="number"> Number in decimal system </param>
+        /// <param name="systemBase"> Base of other system </param>
         public NumeralSystem(int number, int systemBase)
         {
             Number = number;
             SystemBase = systemBase;
         }
 
+        /// <summary>
+        /// Method which set value of the field number and returns it
+        /// </summary>
         public int Number
         {
             set
@@ -27,6 +38,9 @@ namespace DEV_2
             }
         }
 
+        /// <summary>
+        /// Method which set value of the field systemBase and returns it
+        /// </summary>
         public int SystemBase
         {
             set
@@ -41,6 +55,11 @@ namespace DEV_2
             }
         }
 
+
+        /// <summary>
+        /// Check if number is greater than zero
+        /// </summary>
+        /// <param name="value"> checked argument </param>
         public void CheckNumber(int value)
         {
             if (value < 0)
@@ -49,6 +68,10 @@ namespace DEV_2
             }
         }
 
+        /// <summary>
+        /// Check if systemBase are from 2 to 20
+        /// </summary>
+        /// <param name="value"> checked argument </param>
         public void CheckSystemBase(int value)
         {
             if (value < 2 || value > 20)
@@ -57,6 +80,10 @@ namespace DEV_2
             }
         }
 
+        /// <summary>
+        /// Method for conveting numbers for from decimal system to other (2-20)
+        /// </summary>
+        /// <returns> Converted to string number in new numeral system </returns>
         public string ConvertToNumeralSystem()
         {
             if (Number == 0)
@@ -80,6 +107,11 @@ namespace DEV_2
             return ReverseString(reversedNumberInBaseSystem);
         }
 
+        /// <summary>
+        /// Method converting residue to equivalent number
+        /// </summary>
+        /// <param name="residue"></param>
+        /// <returns></returns>
         public string ConvertResidueToString(int residue)
         {
             string newSymbol = String.Empty;
@@ -94,6 +126,11 @@ namespace DEV_2
             }
         }
 
+        /// <summary>
+        /// Method reverse strings
+        /// </summary>
+        /// <param name="ReversedNumberInBaseSystem"> non reversed string </param>
+        /// <returns> Reversed string </returns>
         public string ReverseString(string ReversedNumberInBaseSystem)
         {
             char[] arr = ReversedNumberInBaseSystem.ToCharArray();
