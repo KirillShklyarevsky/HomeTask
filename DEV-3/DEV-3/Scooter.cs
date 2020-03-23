@@ -10,6 +10,10 @@ namespace DEV_3
         {
             set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException();
+                }
                 _maximumSpeed = value;
             }
 
@@ -19,7 +23,7 @@ namespace DEV_3
             }
         }
 
-        public Scooter(int seatsNumber, Engine engine, Chassis chassis, Transmission transmission)
+        public Scooter(int maximumSpeed, Engine engine, Chassis chassis, Transmission transmission)
         : base(engine, chassis, transmission)
         {
             MaximumSpeed = _maximumSpeed;

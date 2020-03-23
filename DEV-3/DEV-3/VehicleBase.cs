@@ -17,40 +17,40 @@ namespace DEV_3
 
         public Engine Engine
         {
+            set
+            {
+                _engine = value ?? throw new ArgumentNullException();
+            }
+        
             get
             {
                 return _engine;
-            }
-
-            set
-            {
-                _engine = value;
             }
         }
 
         public Chassis Chassis
         {
+            set
+            {
+                _chassis = value ?? throw new ArgumentNullException();
+            }
+
             get
             {
                 return _chassis;
-            }
-
-            set
-            {
-                _chassis = value;
-            }
+            }   
         }
 
         public Transmission Transmission
         {
+            set
+            {
+                _transmission = value ?? throw new ArgumentNullException();
+            }
+
             get
             {
                 return _transmission;
-            }
-
-            set
-            {
-                _transmission = value;
             }
         }
 

@@ -10,6 +10,10 @@ namespace DEV_3
         {
             set
             {
+                if (value < 1)
+                {
+                    throw new ArgumentException();
+                }
                 _seatsNumber = value;
             }
 

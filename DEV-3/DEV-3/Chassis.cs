@@ -12,6 +12,10 @@ namespace DEV_3
         {
             set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException();
+                }
                 _numberOfWheels = value;
             }
 
@@ -25,6 +29,10 @@ namespace DEV_3
         {
             set
             {
+                if (value == String.Empty || value == null)
+                {
+                    throw new ArgumentException();
+                }
                 _serialNumber = value;
             }
 
@@ -38,6 +46,10 @@ namespace DEV_3
         {
             set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException();
+                }
                 _permissibleLoad = value;
             }
 

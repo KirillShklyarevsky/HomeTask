@@ -10,25 +10,35 @@ namespace DEV_3
 
         public string TransmissionType
         {
+            set
+            {
+                if (value == String.Empty || value == null)
+                {
+                    throw new ArgumentException();
+                }
+                _transmissionType = value;
+            }
+
             get
             {
                 return _transmissionType;
-            }
-            set
-            {
-                _transmissionType = value;
             }
         }
 
         public int NumberOfGears
         {
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException();
+                }
+                _numberOfGears = value;
+            }
+
             get
             {
                 return _numberOfGears;
-            }
-            set
-            {
-                _numberOfGears = value;
             }
         }
 
@@ -36,6 +46,10 @@ namespace DEV_3
         {
             set
             {
+                if (value == String.Empty || value == null)
+                {
+                    throw new ArgumentException();
+                }
                 _manufacturer = value;
             }
 

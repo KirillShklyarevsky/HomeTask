@@ -13,6 +13,10 @@ namespace DEV_3
         {
             set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException();
+                }
                 _power = value;
             }
 
@@ -26,6 +30,11 @@ namespace DEV_3
         {
             set
             {
+                if (value <0)
+                {
+                    throw new ArgumentException();
+                }
+
                 _capacity = value;
             }
 
@@ -39,6 +48,10 @@ namespace DEV_3
         {
             set
             {
+                if (value == String.Empty || value == null)
+                {
+                    throw new ArgumentException();
+                }
                 _engineType = value;
             }
 
@@ -52,6 +65,10 @@ namespace DEV_3
         {
             set
             {
+                if (value == String.Empty || value == null)
+                {
+                    throw new ArgumentException();
+                }
                 _serialNumber = value;
             }
 
@@ -71,7 +88,7 @@ namespace DEV_3
 
         public string GetInfo()
         {
-            return ( "Engine info: Power: " + Power + " Capacity: " + Capacity
+            return ("Engine info: Power: " + Power + " Capacity: " + Capacity
                     + " Type: " + EngineType + " Serial number: " + SerialNumber);
         }
     }
