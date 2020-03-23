@@ -45,11 +45,17 @@ namespace DEV_3
             }
         }
 
+        public Transmission(string transmissionType, int numberOfGears, string manufacture)
+        {
+            TransmissionType = transmissionType;
+            NumberOfGears = numberOfGears;
+            Manufacturer = manufacture;
+        }
+
         public string GetInfo()
         {
-            string TransmissionInfo = "Transmisssion info: Transmission type: " + TransmissionType + " Number of gears: " + NumberOfGears
-                               + " Manufacturer: " + Manufacturer;
-            return TransmissionInfo;
+            return ("Transmisssion info: Transmission type: " + TransmissionType + " Number of gears: " + NumberOfGears 
+                    + " Manufacturer: " + Manufacturer);
         }
     }
 }

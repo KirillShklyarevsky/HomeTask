@@ -2,7 +2,7 @@
 
 namespace DEV_3
 {
-    class Chassis
+    public class Chassis
     {
         private double _numberOfWheels;
         private string _serialNumber;
@@ -56,9 +56,8 @@ namespace DEV_3
 
         public string GetInfo()
         {
-            string ChassisInfo = "Chassis info: Number of wheels: " + NumberOfWheels + " Serial number: " + SerialNumber
-                               + " Permissible load: " + PermissibleLoad;
-            return ChassisInfo;
+            return ("Chassis info: Number of wheels: " + NumberOfWheels + " Serial number: " + SerialNumber
+                    + " Permissible load: " + PermissibleLoad);
         }
     }
 }

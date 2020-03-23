@@ -71,9 +71,8 @@ namespace DEV_3
 
         public string GetInfo()
         {
-            string engineInfo = "Engine info: Power: " + Power + " Capacity: " + Capacity
-                                + " Type: " + EngineType + " Serial number: " + SerialNumber;
-            return engineInfo;
+            return ( "Engine info: Power: " + Power + " Capacity: " + Capacity
+                    + " Type: " + EngineType + " Serial number: " + SerialNumber);
         }
     }
 }
