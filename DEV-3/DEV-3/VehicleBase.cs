@@ -2,7 +2,7 @@
 
 namespace DEV_3
 {
-    public class VehicleBase
+    abstract public class VehicleBase
     {
         private Chassis _chassis;
         private Transmission _transmission;
