@@ -9,6 +9,9 @@ namespace DEV_3
         private string _engineType;
         private string _serialNumber;
 
+        /// <summary>
+        /// Method that set and get value of power field
+        /// </summary>
         public double Power
         {
             set
@@ -26,6 +29,9 @@ namespace DEV_3
             }
         }
 
+        /// <summary>
+        /// Method that set and get value of capacity field
+        /// </summary>
         public double Capacity
         {
             set
@@ -44,6 +50,9 @@ namespace DEV_3
             }
         }
 
+        /// <summary>
+        /// Method that set and get value of engine type field
+        /// </summary>
         public string EngineType
         {
             set
@@ -61,6 +70,9 @@ namespace DEV_3
             }
         }
 
+        /// <summary>
+        /// Method that set and get value of serial number field
+        /// </summary>
         public string SerialNumber
         {
             set
@@ -78,6 +90,13 @@ namespace DEV_3
             }
         }
 
+        /// <summary>
+        /// Constructor initializes class fields
+        /// </summary>
+        /// <param name="power"></param>
+        /// <param name="capacity"></param>
+        /// <param name="engineType"></param>
+        /// <param name="serialNumber"></param>
         public Engine(double power, double capacity, string engineType, string serialNumber)
         {
             Power = power;
@@ -86,6 +105,10 @@ namespace DEV_3
             SerialNumber = serialNumber;
         }
 
+        /// <summary>
+        /// Method that returns all information about the object
+        /// </summary>
+        /// <returns></returns>
         public string GetInfo()
         {
             return ("Engine info: Power: " + Power + " Capacity: " + Capacity

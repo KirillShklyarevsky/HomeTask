@@ -8,6 +8,9 @@ namespace DEV_3
         private int _numberOfGears;
         private string _manufacturer;
 
+        /// <summary>
+        /// Method that set and get value of transmission type field
+        /// </summary>
         public string TransmissionType
         {
             set
@@ -25,6 +28,9 @@ namespace DEV_3
             }
         }
 
+        /// <summary>
+        /// Method that set and get value of gears number field
+        /// </summary>
         public int NumberOfGears
         {
             set
@@ -42,6 +48,9 @@ namespace DEV_3
             }
         }
 
+        /// <summary>
+        /// Method that set and get value of manufacturer field
+        /// </summary>
         public string Manufacturer
         {
             set
@@ -59,6 +68,12 @@ namespace DEV_3
             }
         }
 
+        /// <summary>
+        /// Constructor initializes class fields
+        /// </summary>
+        /// <param name="transmissionType"></param>
+        /// <param name="numberOfGears"></param>
+        /// <param name="manufacture"></param>
         public Transmission(string transmissionType, int numberOfGears, string manufacture)
         {
             TransmissionType = transmissionType;
@@ -66,6 +81,10 @@ namespace DEV_3
             Manufacturer = manufacture;
         }
 
+        /// <summary>
+        /// Method that returns all information about the object
+        /// </summary>
+        /// <returns></returns>
         public string GetInfo()
         {
             return ("Transmisssion info: Transmission type: " + TransmissionType + " Number of gears: " + NumberOfGears 

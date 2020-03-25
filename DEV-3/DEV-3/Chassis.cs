@@ -8,6 +8,9 @@ namespace DEV_3
         private string _serialNumber;
         private double _permissibleLoad;
 
+        /// <summary>
+        ///  Method that set and get value of wheels number field
+        /// </summary>
         public double NumberOfWheels
         {
             set
@@ -25,6 +28,9 @@ namespace DEV_3
             }
         }
 
+        /// <summary>
+        ///  Method that set and get value of serial number field
+        /// </summary>
         public string SerialNumber
         {
             set
@@ -42,6 +48,9 @@ namespace DEV_3
             }
         }
 
+        /// <summary>
+        ///  Method that set and get value of permissible load field
+        /// </summary>
         public double PermissibleLoad
         {
             set
@@ -59,6 +68,12 @@ namespace DEV_3
             }
         }
 
+        /// <summary>
+        /// Constructor initializes class fields
+        /// </summary>
+        /// <param name="numberOfWheels"></param>
+        /// <param name="serialNumber"></param>
+        /// <param name="permissibleLoad"></param>
         public Chassis(double numberOfWheels, string serialNumber, double permissibleLoad)
         {
             NumberOfWheels = numberOfWheels;
@@ -66,6 +81,10 @@ namespace DEV_3
             PermissibleLoad = permissibleLoad;
         }
 
+        /// <summary>
+        /// Method that returns all information about the object
+        /// </summary>
+        /// <returns></returns>
         public string GetInfo()
         {
             return ("Chassis info: Number of wheels: " + NumberOfWheels + " Serial number: " + SerialNumber
