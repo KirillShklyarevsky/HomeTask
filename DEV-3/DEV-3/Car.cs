@@ -10,7 +10,7 @@ namespace DEV_3
         {
             set
             {
-                if (value < 0)
+                if (value < 1)
                 {
                     throw new ArgumentException();
                 }

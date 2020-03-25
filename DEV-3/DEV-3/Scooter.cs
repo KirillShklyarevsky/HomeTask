@@ -26,7 +26,7 @@ namespace DEV_3
         public Scooter(int maximumSpeed, Engine engine, Chassis chassis, Transmission transmission)
         : base(engine, chassis, transmission)
         {
-            MaximumSpeed = _maximumSpeed;
+            MaximumSpeed = maximumSpeed;
         }
 
         public override string GetInfo()

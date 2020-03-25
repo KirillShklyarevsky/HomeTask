@@ -42,5 +42,45 @@ namespace DEV_3.Tests
         {
             Transmission transmission = new Transmission(transmissionType, numberOfGears, manufacture);
         }
+        
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CarThrowExceptionIfArgumetsNotValid()
+        {
+            Engine engine = new Engine(100, 100, "Diesel", "1106D-E66TA");
+            Chassis chassis = new Chassis(4, "QSB4-5", 1000);
+            Transmission transmission = new Transmission("Hydromechanical", 5, "Jatco");
+            Car car = new Car(0, engine, chassis, transmission);
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TruckThrowExceptionIfArgumetsNotValid()
+        {
+            Engine engine = new Engine(1000, 10000, "Diesel", "1106D-E66TA");
+            Chassis chassis = new Chassis(8, "QSB4-5", 10000);
+            Transmission transmission = new Transmission("Hydromechanical", 6, "Jatco");
+            Truck truck = new Truck(-1, engine, chassis, transmission);
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void BusThrowExceptionIfArgumetsNotValid()
+        {
+            Engine engine = new Engine(1000, 10000, "Diesel", "1106D-E66TA");
+            Chassis chassis = new Chassis(8, "QSB4-5", 10000);
+            Transmission transmission = new Transmission("Hydromechanical", 6, "Jatco");
+            Bus bus = new Bus(0, engine, chassis, transmission);
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ScooterThrowExceptionIfArgumetsNotValid()
+        {
+            Engine engine = new Engine(10, 100, "Diesel", "1106D-E66TA");
+            Chassis chassis = new Chassis(2, "QSB4-5", 100);
+            Transmission transmission = new Transmission("Hydromechanical", 3, "Jatco");
+            Scooter scooter = new Scooter(-10, engine, chassis, transmission);
+        }
     }
 }
