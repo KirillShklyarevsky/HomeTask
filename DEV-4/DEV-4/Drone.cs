@@ -5,9 +5,10 @@ namespace DEV_4
     class Drone : IFlyable
     {
         Coordinate _currentPosition;
-        const double speed = 15;
+        const double speed = 20;
         const double stopPeriod = 1 / 6;
         const double stopTime = 1 / 60;
+        const double maximumRange = 1000;
 
         public Coordinate CurrentPosition
         {
@@ -28,12 +29,21 @@ namespace DEV_4
 
         public void FlyTo(Coordinate Coordinate)
         {
+            if (_currentPosition.DistanceBetweenTwoPoint(Coordinate) > maximumRange)
+            {
+                throw new ArgumentException();
+            }
             CurrentPosition = Coordinate;
         }
 
         public DateTime GetFlyTime(Coordinate Coordinate)
         {
             double distance = CurrentPosition.DistanceBetweenTwoPoint(Coordinate);
+
+            if (distance > maximumRange)
+            {
+                throw new ArgumentException();
+            }
 
             double stopDistance = speed * stopPeriod;
             int numberOfStops = (int)(distance / stopDistance);

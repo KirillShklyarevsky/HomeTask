@@ -5,7 +5,6 @@ namespace DEV_4
     class Plane : IFlyable
     {
         private Coordinate _currentPosition;
-        private int _speed;
         const int startSpeed = 200;
         const int acceleration = 10;
         const int accelerationDistance = 10;
@@ -23,23 +22,9 @@ namespace DEV_4
             }
         }
 
-        public int Speed
-        {
-            set
-            {
-                _speed = value;
-            }
-            get
-            {
-                return _speed;
-            }
-        }
-
         public Plane(Coordinate currentPosition)
         {
             CurrentPosition = currentPosition;
-            Speed = startSpeed;
-
         }
 
         public void FlyTo(Coordinate Coordinate)
@@ -50,17 +35,17 @@ namespace DEV_4
         public DateTime GetFlyTime(Coordinate Coordinate)
         {
             DateTime time = DateTime.Now;
+            int speed = startSpeed;
             double flightTime = 0;
             double distance = CurrentPosition.DistanceBetweenTwoPoint(Coordinate);
-            double currentDistance = 0;
 
-            while (distance < accelerationDistance && Speed < maximumSpeed)
+            while (distance > 0)
             {
-                flightTime += accelerationDistance / Speed;
-                Speed += acceleration;
+                flightTime += accelerationDistance / speed;
+                speed += acceleration;
                 distance -= accelerationDistance;
             }
-            flightTime += distance / Speed;
+            flightTime += distance / speed;
             
             return time.AddHours(flightTime);
         }
