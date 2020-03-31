@@ -2,6 +2,9 @@
 
 namespace DEV_4
 {
+    /// <summary>
+    /// Class drone
+    /// </summary>
     public class Drone : IFlyable
     {
         Coordinate _currentPosition;
@@ -10,6 +13,9 @@ namespace DEV_4
         const double stopTime = 1 / 60;
         const double maximumRange = 1000;
 
+        /// <summary>
+        /// Method that set and return field current position value
+        /// </summary>
         public Coordinate CurrentPosition
         {
             set
@@ -22,11 +28,19 @@ namespace DEV_4
             }
         }
 
+        /// <summary>
+        /// Constructor for class drone
+        /// </summary>
+        /// <param Current position of drone ="currentPosition"></param>
         public Drone(Coordinate currentPosition)
         {
             CurrentPosition = currentPosition;
         }
 
+        /// <summary>
+        /// Method for change the value of current position
+        /// </summary>
+        /// <param New position of the drone ="coordinate"></param>
         public void FlyTo(Coordinate coordinate)
         {
             if (coordinate.DistanceBetweenTwoPoint(CurrentPosition) > maximumRange)
@@ -36,6 +50,11 @@ namespace DEV_4
             CurrentPosition = coordinate;
         }
 
+        /// <summary>
+        /// Method for getting flight time
+        /// </summary>
+        /// <param New position of the drone ="coordinate"></param>
+        /// <returns> Arrival time </returns>
         public DateTime GetFlyTime(Coordinate coordinate)
         {
             double distance = CurrentPosition.DistanceBetweenTwoPoint(coordinate);
