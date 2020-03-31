@@ -2,7 +2,7 @@
 
 namespace DEV_4
 {
-    class Bird : IFlyable
+    public class Bird : IFlyable
     {
         private Coordinate _currentPosition;
         private int _speed;
@@ -41,19 +41,19 @@ namespace DEV_4
             Speed = random.Next(minimalSpeed, maximalSpeed);
         }
 
-        public void FlyTo(Coordinate Coordinate)
+        public void FlyTo(Coordinate coordinate)
         {
-            CurrentPosition = Coordinate;
+            CurrentPosition = coordinate;
         }
 
-        public DateTime GetFlyTime(Coordinate Coordinate)
+        public DateTime GetFlyTime(Coordinate coordinate)
         {
             if (Speed == minimalSpeed) 
             {
                 throw new ArgumentException();
             }
             DateTime time = DateTime.Now;
-            return time.AddHours(Coordinate.DistanceBetweenTwoPoint(CurrentPosition) / Speed);
+            return time.AddHours(coordinate.DistanceBetweenTwoPoint(CurrentPosition) / Speed);
         }
     }
 }

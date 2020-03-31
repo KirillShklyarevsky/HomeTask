@@ -29,5 +29,22 @@ namespace FlyableTests
 
             Assert.AreEqual(actual, expected);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DroneFlyToThrowExceptionTest()
+        {
+            Drone drone = new Drone(new Coordinate(1, 1, 1));
+            drone.FlyTo(new Coordinate(1500, 1500, 1500));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DroneGetFlyTimeThrowExceptionTest()
+        {
+            Drone drone = new Drone(new Coordinate(1, 1, 1));
+            drone.GetFlyTime(new Coordinate(1500, 1500, 1500));
+        }
     }
+
 }

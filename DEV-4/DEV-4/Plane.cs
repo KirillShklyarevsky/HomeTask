@@ -2,7 +2,7 @@
 
 namespace DEV_4
 {
-    class Plane : IFlyable
+    public class Plane : IFlyable
     {
         private Coordinate _currentPosition;
         const int startSpeed = 200;
@@ -27,17 +27,17 @@ namespace DEV_4
             CurrentPosition = currentPosition;
         }
 
-        public void FlyTo(Coordinate Coordinate)
+        public void FlyTo(Coordinate coordinate)
         {
-            CurrentPosition = Coordinate;
+            CurrentPosition = coordinate;
         }
 
-        public DateTime GetFlyTime(Coordinate Coordinate)
+        public DateTime GetFlyTime(Coordinate coordinate)
         {
             DateTime time = DateTime.Now;
             int speed = startSpeed;
             double flightTime = 0;
-            double distance = CurrentPosition.DistanceBetweenTwoPoint(Coordinate);
+            double distance = CurrentPosition.DistanceBetweenTwoPoint(coordinate);
 
             while (distance > 0)
             {

@@ -2,7 +2,7 @@
 
 namespace DEV_4
 {
-    class Drone : IFlyable
+    public class Drone : IFlyable
     {
         Coordinate _currentPosition;
         const double speed = 20;
@@ -27,18 +27,18 @@ namespace DEV_4
             CurrentPosition = currentPosition;
         }
 
-        public void FlyTo(Coordinate Coordinate)
+        public void FlyTo(Coordinate coordinate)
         {
-            if (_currentPosition.DistanceBetweenTwoPoint(Coordinate) > maximumRange)
+            if (coordinate.DistanceBetweenTwoPoint(CurrentPosition) > maximumRange)
             {
                 throw new ArgumentException();
             }
-            CurrentPosition = Coordinate;
+            CurrentPosition = coordinate;
         }
 
-        public DateTime GetFlyTime(Coordinate Coordinate)
+        public DateTime GetFlyTime(Coordinate coordinate)
         {
-            double distance = CurrentPosition.DistanceBetweenTwoPoint(Coordinate);
+            double distance = CurrentPosition.DistanceBetweenTwoPoint(coordinate);
 
             if (distance > maximumRange)
             {
