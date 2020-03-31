@@ -57,16 +57,20 @@ namespace DEV_4
                 return _z;
             }
         }
+
         public Coordinate(double x, double y, double z)
         {
-            _x = x;
-            _y = y;
-            _z = z;
+            _x = minimalValue;
+            _y = minimalValue;
+            _z = minimalValue;
+            X = x;
+            Y = y;
+            Z = z;
         }
 
         public double DistanceBetweenTwoPoint(Coordinate coordinate)
         {
-            if (coordinate is Coordinate) // ???
+            if (coordinate is Coordinate)
             {
                 return Math.Sqrt(Math.Pow(_x - coordinate.X, 2) + Math.Pow(_y - coordinate.Y, 2)
                         + Math.Pow(_z - coordinate.Z, 2));

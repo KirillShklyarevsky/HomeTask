@@ -53,7 +53,7 @@ namespace DEV_4
                 throw new ArgumentException();
             }
             DateTime time = DateTime.Now;
-            return time.AddHours(Coordinate.DistanceBetweenTwoPoint(CurrentPosition) / );
+            return time.AddHours(Coordinate.DistanceBetweenTwoPoint(CurrentPosition) / Speed);
         }
     }
 }
