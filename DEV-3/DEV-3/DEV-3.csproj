@@ -44,8 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bus.cs" />
+    <Compile Include="BusFactory.cs" />
     <Compile Include="Car.cs" />
+    <Compile Include="CarFactory.cs" />
+    <Compile Include="IVehicleFactory.cs" />
     <Compile Include="Scooter.cs" />
+    <Compile Include="TruckFactory.cs" />
     <Compile Include="VehicleBase.cs" />
     <Compile Include="Chassis.cs" />
     <Compile Include="Engine.cs" />
