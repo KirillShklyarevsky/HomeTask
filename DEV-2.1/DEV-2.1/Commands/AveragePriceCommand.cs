@@ -4,11 +4,16 @@ namespace DEV_2._1
 {
     class AveragePriceCommand : ICommand
     {
-        public AveragePriceCommand() { } // подумать
+        CarData _carData;
+
+        public AveragePriceCommand(CarData carData)
+        {
+            _carData = carData;
+        }
 
         public void Execute()
         {
-            CarData.getInstance().AveragePrice();
+            _carData.AveragePrice();
         }
     }
 }

@@ -4,19 +4,16 @@ namespace DEV_2._1
 {
     class CountAllCommand : ICommand
     {
-        CarData carData;
-        public CountAllCommand(CarData newcarData)
+        CarData _carData;
+
+        public CountAllCommand(CarData carData)
         {
-            carData = newcarData;
+            _carData = carData;
         }
 
         public void Execute()
         {
-            carData.CountAll();
-        }
-
-        public void Undo()
-        {
+            _carData.CountAll();
         }
     }
 }
