@@ -5,23 +5,24 @@ namespace DEV_2._1
 {
     class Invoker
     {
-        //List<ICommand> commands = new List<ICommand>;
+        private List<ICommand> commands;
 
-        ICommand _command;
-
-        public Invoker() { }
-
-        public void SetCommand(ICommand command)
+        public Invoker()
         {
-            _command = command;
+            commands = new List<ICommand>();
         }
-        public void Run()
+
+        public void AddCommand(ICommand command)
         {
-            _command.Execute();
+            commands.Add(command);
         }
-        public void Cancel()
+
+        public void RunCommands()
         {
-            _command.Undo();
+            foreach (var command in commands)
+            {
+                command.Execute();
+            }
         }
     }
 }
