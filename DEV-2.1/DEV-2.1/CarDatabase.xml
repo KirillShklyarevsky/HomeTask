@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Cars>
+    <Car>
+    <name>bmw</name>
+    <model>m5</model>
+    <count>10</count>
+    <cost>100</cost>
+  </Car>
+    <Car>
+    <name>bmw</name>
+    <model>x6</model>
+    <count>5</count>
+    <cost>200</cost>
+  </Car>
+    <Car>
+    <name>mazda</name>
+    <model>mx5</model>
+    <count>5</count>
+    <cost>1500</cost>
+  </Car>
+    <Car>
+    <name>honda</name>
+    <model>civic</model>
+    <count>10</count>
+    <cost>50</cost>
+  </Car>
+</Cars>
