@@ -5,15 +5,17 @@ namespace Calculator
     class TemperatureConverter
     {
         private const double TemperatureConst = 32;
+        private const double ConversionCoefficient = 9.0 / 5;
+        private const double ReverceConversionCoefficient = 5.0 / 9;
 
         public double CelsiusToFahrenheit(double celsius)
         {
-            return ((9 * celsius) / 5) + TemperatureConst;
+            return (ConversionCoefficient * celsius + TemperatureConst);
         }
 
         public double FahrenheitToCelsius(double fahrenheit)
         {
-            return (5 * (fahrenheit - TemperatureConst)) / 9;
+            return (ReverceConversionCoefficient * (fahrenheit - TemperatureConst));
         }
 
         public double Convert(double temperature, string direction)
